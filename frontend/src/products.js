@@ -7,7 +7,7 @@ const products = [
         'price': 29.50, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 15, 
     },
     {
         '_id': 2,
@@ -17,7 +17,7 @@ const products = [
         'price': 8.89, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 55, 
     },
     {
         '_id': 3,
@@ -27,7 +27,7 @@ const products = [
         'price': 19.50, 
         'countInStock': 4,
         'rating': 19.90,
-        'reviewsNum': 25, 
+        'reviewsNum': 70, 
     },
     {
         '_id': 4,
@@ -36,8 +36,8 @@ const products = [
         'description': 'Jednorazowe rękawice medyczne nitrylowe diagnostyczno-zabiegowe. Rozmiar S. Bezpudrowe, niejałowe. Opakowanie 100 sztuk.',
         'price': 19.50, 
         'countInStock': 4,
-        'rating': 19.90,
-        'reviewsNum': 25, 
+        'rating': 5,
+        'reviewsNum': 47, 
     },
     {
         '_id': 5,
@@ -47,7 +47,7 @@ const products = [
         'price': 25, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 52, 
     },
     {
         '_id': 6,
@@ -56,8 +56,8 @@ const products = [
         'description': 'Pojemnik na odpady medyczne o pojemności 0,7 litra. Wykonany z tworzywa sztucznego - polipropylenu.',
         'price': 5, 
         'countInStock': 4,
-        'rating': 4.5,
-        'reviewsNum': 25, 
+        'rating': 4,
+        'reviewsNum': 18, 
     },
     {
         '_id': 7,
@@ -66,8 +66,8 @@ const products = [
         'description': 'Prześcieradła papierowe o wymiarach 50x50 cm w rolce. Przeznaczone do gabinetów lekarskich, zabiegowych, kosmetycznych itp.',
         'price': 24.99, 
         'countInStock': 4,
-        'rating': 4.5,
-        'reviewsNum': 25, 
+        'rating': 4.75,
+        'reviewsNum': 24, 
     },
     {
         '_id': 8,
@@ -77,7 +77,7 @@ const products = [
         'price': 0.99, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 51, 
     },
     {
         '_id': 9,
@@ -87,7 +87,7 @@ const products = [
         'price': 14.50, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 89, 
     },
     {
         '_id': 10,
@@ -97,7 +97,7 @@ const products = [
         'price': 19.99, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 33, 
     },
     {
         '_id': 11,
@@ -107,7 +107,7 @@ const products = [
         'price': 6.99, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 69, 
     },
     {
         '_id': 12,
@@ -117,7 +117,7 @@ const products = [
         'price': 119.99, 
         'countInStock': 4,
         'rating': 4.5,
-        'reviewsNum': 25, 
+        'reviewsNum': 102, 
     },
 ]
 export default products;

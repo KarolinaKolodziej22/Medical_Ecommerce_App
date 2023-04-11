@@ -6,7 +6,7 @@ const products = [
         'description': 'Cewnik do odsysania górnych dróg oddechowych. Długość 40 cm. Służy do udrażniania oraz toalety górnych dróg oddechowych u pacjentów, u których istnieje potrzeba odessania wydzieliny zalegającej w górnych drogach oddechowych. Wyrób sterylny. Opakowanie 50 sztuk.',
         'price': 29.50, 
         'countInStock': 4,
-        'rating': 4.5,
+        'rating': 4,
         'reviewsNum': 15, 
     },
     {
@@ -26,7 +26,7 @@ const products = [
         'description': 'Jednorazowe rękawice medyczne nitrylowe diagnostyczno-zabiegowe. Rozmiar M. Bezpudrowe, niejałowe. Opakowanie 100 sztuk.',
         'price': 19.50, 
         'countInStock': 4,
-        'rating': 19.90,
+        'rating': 4,
         'reviewsNum': 70, 
     },
     {
@@ -56,7 +56,7 @@ const products = [
         'description': 'Pojemnik na odpady medyczne o pojemności 0,7 litra. Wykonany z tworzywa sztucznego - polipropylenu.',
         'price': 5, 
         'countInStock': 4,
-        'rating': 4,
+        'rating': 5,
         'reviewsNum': 18, 
     },
     {
@@ -66,7 +66,7 @@ const products = [
         'description': 'Prześcieradła papierowe o wymiarach 50x50 cm w rolce. Przeznaczone do gabinetów lekarskich, zabiegowych, kosmetycznych itp.',
         'price': 24.99, 
         'countInStock': 4,
-        'rating': 4.75,
+        'rating': 4,
         'reviewsNum': 24, 
     },
     {
@@ -86,7 +86,7 @@ const products = [
         'description': 'Hipoalergiczne przylepce foliowe Omnifilm w 2,5 cm w rolce 5 m. Do podtrzymania opatrunków wszelkiego rodzaju, do mocowań kaniul, sond, cewników itp.',
         'price': 14.50, 
         'countInStock': 4,
-        'rating': 4.5,
+        'rating': 4,
         'reviewsNum': 89, 
     },
     {

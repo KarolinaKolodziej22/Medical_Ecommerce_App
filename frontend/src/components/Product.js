@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
-import RatingStars from 'react-rating-stars-component';
-
+// import RatingStars from 'react-rating-stars-component';
+import Rating from './Rating';
 
 function Product( {product} ){
     return(
@@ -18,13 +18,14 @@ function Product( {product} ){
 
         <Card.Text as ="div">
             <div className="my-3">
-             Ocena {product.rating} z {product.reviewsNum} recenzji
-             <RatingStars
+             Ocena {product.rating} z {product.reviewsNum} ocen
+             <Rating value={product.rating} color="#ffd700"/>
+           {/*   <RatingStars
               count={5}
               value={product.rating}
               size={24}
               activeColor="#ffd700"
-            />
+            /> */}
             </div>
         </Card.Text>
         <Card.Text as="h4">

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, useParams} from 'react-router-dom'
-import {Row, Col, Image, ListGroup, Card} from 'react-bootstrap'
+import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
 import products from '../products'
 import Rating from '../components/Rating'
 
@@ -12,7 +12,7 @@ function ProductScreen(){
             
             <Link to='/' className= 'btn btn-light my-3'>Wróć</Link>
             <Row>
-                <Col md={4}>
+                <Col md={6}>
                  <Image src ={product.image} alt={product.name} fluid/>
                 </Col>
                 <Col md={4}>
@@ -31,9 +31,9 @@ function ProductScreen(){
                     </ListGroup.Item>
                     </ListGroup>
                 </Col>
-                <Col md={3}>
+                <Col md={2}>
                     <Card>
-                        <ListGroup varian='flush'>
+                        <ListGroup variant='flush'>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Cena: </Col>
@@ -44,11 +44,14 @@ function ProductScreen(){
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Ilość na stanie:</Col>
+                                    <Col>Ilość:</Col>
                                     <Col>
                                         {product.countInStock}  
                                     </Col>
                                 </Row>
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                <Button className='btn-dodaj' disabled = {product.countInStock==0} type='button'>Dodaj do koszyka</Button>
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>

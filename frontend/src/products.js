@@ -13,7 +13,7 @@ const products = [
         '_id': 2,
         'name': 'Maska chirurgiczna',
         'image': '/images/maska.jpg',
-        'description': '',
+        'description': 'Maski chirurgiczne trjówarstwowe medyczne niebieskie z włókniny z gumkami. Posiada certyfikat CE. Opakowanie 50 sztuk.',
         'price': 8.89, 
         'countInStock': 4,
         'rating': 4.5,

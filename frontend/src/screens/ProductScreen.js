@@ -51,7 +51,7 @@ function ProductScreen(){
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <Button className='btn-dodaj' disabled = {product.countInStock==0} type='button'>Dodaj do koszyka</Button>
+                                <Button className='btn-dodaj' disabled = {product.countInStock===0} type='button'>Dodaj do koszyka</Button>
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>

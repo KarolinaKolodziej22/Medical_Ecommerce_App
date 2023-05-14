@@ -1,8 +1,9 @@
 import React from 'react'
 import {Link, useParams} from 'react-router-dom'
-import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
+import {Row, Col, Image, ListGroup, Card, Button, ListGroupItem} from 'react-bootstrap'
 import products from '../products'
 import Rating from '../components/Rating'
+import RatingStars from 'react-rating-stars-component'
 
 function ProductScreen(){
     const {id} = useParams()
@@ -31,11 +32,11 @@ function ProductScreen(){
                     </ListGroup.Item>
                     </ListGroup>
                 </Col>
-                <Col md={2}>
+                <Col md={2} style = {{marginTop: '50px'}}>
                     <Card>
                         <ListGroup variant='flush'>
                             <ListGroup.Item>
-                                <Row>
+                                <Row  style = {{marginTop: '20px'}}>
                                     <Col>Cena: </Col>
                                     <Col>
                                     {product.price}zł
@@ -43,7 +44,7 @@ function ProductScreen(){
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <Row>
+                                <Row style = {{marginTop: '20px'}}>
                                     <Col>Ilość:</Col>
                                     <Col>
                                         {product.countInStock}  
@@ -55,6 +56,43 @@ function ProductScreen(){
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>
+                 
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4} style={{fontSize: '32px'}}>
+                    <ListGroup variant="flush">
+                        <ListGroupItem>
+                        Dodaj ocenę produktu:
+                        </ListGroupItem>
+
+                        <ListGroupItem>
+                    <RatingStars
+                        count={5}
+                        value={product.rating}
+                        size={24}
+                        activeColor="#ffd700"
+                        /> 
+                        </ListGroupItem>
+                    
+                        </ListGroup>
+                        
+                </Col>
+                <Col md={4} style = {{fontSize: '32px'}}>
+                    <ListGroup variant="flush">
+                    <ListGroup.Item>
+                        Dodaj recenzję:
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                    <em style={{fontSize: '24px'}}>Opis...</em>
+                    </ListGroup.Item>
+                    </ListGroup>
+                </Col>
+                <Col md={4} style = {{fontSize: '32px', marginTop: '50px'}}>
+                    <Row>
+                    <Button className='btn-ocena' type='button'>Zatwierdź</Button>
+                    </Row>
+               
                 </Col>
             </Row>
         </div>

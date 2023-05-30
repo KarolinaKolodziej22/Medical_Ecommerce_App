@@ -1,19 +1,38 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import {Row, Col, Image, ListGroup, Card, Button, ListGroupItem} from 'react-bootstrap'
 import products from '../products'
 import Rating from '../components/Rating'
 import RatingStars from 'react-rating-stars-component'
+import axios from 'axios'
 
-function ProductScreen(){
-    const {id} = useParams()
-    const product = products.find((product)=>product._id.toString() === id)
+
+function ProductScreen({}){
+    const {id} = useParams();
+
+   /*  const [product, setProduct] = useState([]) //pusta tab, na poczatku 
+    useEffect(() => {
+
+        async function fetchProduct(){
+            try {
+                const { data } = await axios.get(`/api/products/${id}`);
+                setProduct(data);
+              } catch (error) {
+                // Obsługa błędu żądania
+                console.error(error);
+              }
+        }
+
+        fetchProduct() // pobierz produkt z serwera
+    }, [])
+ */
+     const product = products.find((product)=>product._id.toString() === id)
     return(
         <div>
             
             <Link to='/' className= 'btn btn-light my-3'>Wróć</Link>
             <Row>
-                <Col md={6}>
+                <Col md={5}>
                  <Image src ={product.image} alt={product.name} fluid/>
                 </Col>
                 <Col md={4}>
@@ -28,11 +47,11 @@ function ProductScreen(){
                         Cena: {product.price}zł
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        Opis: {product.description}
+                        {product.description}
                     </ListGroup.Item>
                     </ListGroup>
                 </Col>
-                <Col md={2} style = {{marginTop: '50px'}}>
+                <Col md={3} style = {{marginTop: '50px'}}>
                     <Card>
                         <ListGroup variant='flush'>
                             <ListGroup.Item>

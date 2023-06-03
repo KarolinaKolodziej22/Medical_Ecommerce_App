@@ -7,6 +7,8 @@ import ProductScreen from  './screens/ProductScreen';
 
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import Cart from "./components/Cart";
+//import {Drawer} from '@mui/material';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path='/product/:id' element={<ProductScreen/>}/>
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/koszyk" element={<Cart />} />
           </Routes>
         </Container>
       </main>
@@ -26,5 +29,12 @@ function App() {
     </Router>
   );
 }
-
+function CartWithProductScreen() {
+  return (
+    <>
+      <ProductScreen />
+      <Cart/>
+    </>
+  );
+}
 export default App;

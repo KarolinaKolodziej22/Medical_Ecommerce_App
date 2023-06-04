@@ -6,9 +6,21 @@ import Rating from '../components/Rating'
 import RatingStars from 'react-rating-stars-component'
 import axios from 'axios'
 
+import { useDispatch, useSelector} from 'react-redux'
+import {listDetailsOfProducts} from '../actions/productAction'
+import LoadingComponent from '../components/LoadingComponent'
+
+
 
 function ProductScreen({}){
     const {id} = useParams();
+    const dispatch = useDispatch()
+    const productDetails = useSelector(state => state.productDetails)
+
+    useEffect(() => {
+        dispatch(listDetailsOfProducts(id))
+
+    },[dispatch])
 
    /*  const [product, setProduct] = useState([]) //pusta tab, na poczatku 
     useEffect(() => {

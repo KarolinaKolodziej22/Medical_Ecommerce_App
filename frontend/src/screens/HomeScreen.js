@@ -4,8 +4,8 @@ import {Row, Col} from 'react-bootstrap'
 import Product from '../components/Product'
 import LoadingComponent from '../components/LoadingComponent';
 
-import products from '../products'
-import axios from 'axios'
+//import products from '../products'
+//import axios from 'axios'
 import {listProducts} from '../actions/productAction'
 
 

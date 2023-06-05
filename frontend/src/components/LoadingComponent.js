@@ -15,7 +15,6 @@ function LoadingComponent(){
                 display: 'block'
                 
             }}>
-                
 
         </Spinner>
     )

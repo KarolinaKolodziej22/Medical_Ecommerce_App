@@ -20,7 +20,7 @@ function Product( {product} ){
 
         <Card.Text as ="div">
             <div className="my-3">
-            {product.reviewsNum} ocen
+            Ocena
              <Rating value={product.rating} color="#ffd700"/>
            {/*   <RatingStars
               count={5}

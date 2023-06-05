@@ -4,10 +4,10 @@ import {Container} from 'react-bootstrap';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from  './screens/ProductScreen';
-
+import Cart from './screens/Cart';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import Cart from "./components/Cart";
+
 //import {Drawer} from '@mui/material';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path='/product/:id' element={<ProductScreen/>}/>
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/koszyk" element={<Cart />} />
+        <Route path="/koszyk/:id?" element={<Cart />} />
           </Routes>
         </Container>
       </main>
@@ -29,12 +29,5 @@ function App() {
     </Router>
   );
 }
-function CartWithProductScreen() {
-  return (
-    <>
-      <ProductScreen />
-      <Cart/>
-    </>
-  );
-}
+
 export default App;

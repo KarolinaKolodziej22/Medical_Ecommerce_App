@@ -23,6 +23,7 @@ function ProductScreen(){ //przekazanie parametru ktory nie dziala:)))
 
     useEffect(() => {
         dispatch(listDetailsOfProducts(id))
+        console.log(id)
 
     },[dispatch,id])
 
@@ -32,22 +33,6 @@ function ProductScreen(){ //przekazanie parametru ktory nie dziala:)))
        // console.log('add to cart', id) //sprawdzenie czy dziala
        navigate(`/koszyk/${id}?qty=${qty}`) //
     }
-   /*  const [product, setProduct] = useState([]) //pusta tab, na poczatku 
-    useEffect(() => {
-
-        async function fetchProduct(){
-            try {
-                const { data } = await axios.get(`/api/products/${id}`);
-                setProduct(data);
-              } catch (error) {
-                // Obsługa błędu żądania
-                console.error(error);
-              }
-        }
-
-        fetchProduct() // pobierz produkt z serwera
-    }, [])
- */
      const product = products.find((product)=>product._id.toString() === id)
     return(
         <div>
@@ -55,21 +40,21 @@ function ProductScreen(){ //przekazanie parametru ktory nie dziala:)))
             <Link to='/' className= 'btn btn-light my-3'>Wróć</Link>
             <Row>
                 <Col md={5}>
-                 <Image src ={product.image} alt={product.name} fluid/>
+                 <Image src ={productDetails.product.image} alt={productDetails.product.name} fluid/>
                 </Col>
                 <Col md={4}>
                     <ListGroup variant="flush">
                     <ListGroup.Item>
-                        <h3 style = {{marginLeft: '80px}}'}}>{product.name}</h3>
+                        <h3 style = {{marginLeft: '80px}}'}}>{productDetails.product.name}</h3>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Rating value={product.rating} text={`${product.reviewsNum} ocen`} color={'#ffd700'}/>
+                        <Rating value={productDetails.product.rating} color={'#ffd700'}/>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        Cena: {product.price}zł
+                        Cena: {productDetails.product.price}zł
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        {product.description}
+                        {productDetails.product.description}
                     </ListGroup.Item>
                     </ListGroup>
                 </Col>
@@ -80,7 +65,7 @@ function ProductScreen(){ //przekazanie parametru ktory nie dziala:)))
                                 <Row  style = {{marginTop: '20px'}}>
                                     <Col>Cena: </Col>
                                     <Col>
-                                    {product.price}zł
+                                    {productDetails.product.price}zł
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
@@ -138,7 +123,7 @@ function ProductScreen(){ //przekazanie parametru ktory nie dziala:)))
                         <ListGroupItem>
                     <RatingStars
                         count={5}
-                        value={product.rating}
+                        value={productDetails.product.rating}
                         size={24}
                         activeColor="#ffd700"
                         /> 

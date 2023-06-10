@@ -137,10 +137,7 @@ export default function SignIn(location) {
               autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Zapamiętaj mnie"
-            />
+           
             <Button
               type="submit"
               fullWidth

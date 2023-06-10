@@ -6,7 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from  './screens/ProductScreen';
 import Cart from './screens/Cart';
 import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp"; 
 
 //import {Drawer} from '@mui/material';
 
@@ -19,8 +19,8 @@ function App() {
           <Routes>
         <Route path='/' element={<HomeScreen/>} exact/>
         <Route path='/product/:id' element={<ProductScreen/>}/>
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />}/>
+        <Route path="/register" element={<SignUp />} /> 
         <Route path="/koszyk/:id?" element={<Cart />} />
           </Routes>
         </Container>

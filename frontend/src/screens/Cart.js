@@ -28,27 +28,27 @@ function Cart() {
     
     //usuwanie produktow
     const removeFromCartHandler = () => {
-        console.log('remove: ', id)
-        dispatch(removeFromCart(id))
+        console.log('remove: ', id) //sprawdzanko
+        dispatch(removeFromCart(id)) //usun dane dla danego id
     }
 
     //przejscie do koszyka
     const checkout = () => {
-        navigate(`/login?redirect=shipping`)
+        navigate(`/login?redirect=shipping`) 
     }
     return(
         <Row>
     <Col md={8}>
         <h1>Twój koszyk</h1>
-        {cartItems.length === 0 ? (
+        {cartItems.length === 0 ? ( //jesli nie ma produktow, zwroc napis koszyk pusty z opcja wroc
             <div>
-                <h2>jest pusty</h2>
+                <h2>jest pusty</h2> 
                 <Link to="/">Wróć</Link>
             </div>
         ) : (
             <ListGroup variant="flush">
                 {cartItems.map(item => (
-                    <ListGroup.Item key={item.product}>
+                    <ListGroup.Item key={item.product}> 
                         <Row>
                             <Col md={1}>
                                 {<Image src={item.image} style={{ maxWidth: '100%', height: 'auto' }}/>}
@@ -86,10 +86,10 @@ function Cart() {
                             <h2>Suma:</h2>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                           <h5>{cartItems.reduce((acc,item)=>acc + item.qty,0)} produktów</h5> 
+                           <h5>{cartItems.reduce((sum,item)=>sum + item.qty,0)} produktów</h5> 
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <h5>{cartItems.reduce((acc,item)=>acc + item.qty*item.price,0).toFixed(2)} zł</h5>
+                            <h5>{cartItems.reduce((sum,item)=>sum + item.qty*item.price,0).toFixed(2)} zł</h5>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Button

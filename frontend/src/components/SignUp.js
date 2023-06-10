@@ -10,15 +10,18 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-
+import {useSelector, useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import { FeedbackField } from "./shared/feedbackField";
+import {register} from '../actions/userAction'
+
 
 const theme = createTheme();
 
-const axios = require("axios").default; //do wywolan zadan sieciowych
+// const axios = require("axios").default; //do wywolan zadan sieciowych
 
-export default function SignUp() {
-  const [response, setResponse] = React.useState(null);
+export default function SignUp(location) {
+  /* const [response, setResponse] = React.useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,8 +33,38 @@ export default function SignUp() {
       })
       .catch((error) => {
         setResponse(error.response);
-      });
-  };
+      }); */
+        const [name, setName] = React.useState('')
+        const [email, setEmail] = React.useState('')
+
+        const [password, setPassword] = React.useState('')
+        const [confirmPassword, setConfirmPassword] = React.useState('')
+
+        const [error, setError] = React.useState('')
+        const dispatch = useDispatch();
+        const [message, setMessage] = React.useState('')
+      
+        const redirect = location.search ? location.search.split('=')[1] : '/'
+        const userRegister = useSelector(state => state.userRegister)
+        const {loading, userInfo} = userRegister
+        const navigate = useNavigate();
+      
+        React.useEffect(() => {
+          if(userInfo){
+            navigate(redirect) 
+          }
+        },[userInfo, redirect])
+      
+        const submitHandler = (e) => {
+          e.preventDefault()
+          //console.log('submitted')
+          if(password != confirmPassword){
+            setMessage('Podane hasła są inne!')
+          }else{
+          dispatch(register(name,email,password))
+        }
+        }
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,29 +87,32 @@ export default function SignUp() {
           <Box
             component="form"
             noValidate
-            onSubmit={handleSubmit}
+            onSubmit={submitHandler}
             sx={{ mt: 3 }}
           >
-            <FeedbackField response={response} />
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
+           <Grid container spacing={2}>
+             <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
-                  name="username"
+                  name="name"
                   required
                   fullWidth
-                  id="userName"
-                  label="Login"
+                  id="name"
+                  label="Imię"
                   autoFocus
+                  onChange={(e) => setName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  autoComplete="given-name"
+                  name="email"
+                  required
                   fullWidth
                   id="email"
                   label="Email"
-                  name="email"
-                  autoComplete="email"
+                  autoFocus
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -88,6 +124,18 @@ export default function SignUp() {
                   type="password" //znaki ukrywane
                   id="password" 
                   autoComplete="new-password" //zabezpieczenie przez zachowaniem automatycznych hasel
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  reguired
+                  id="confirmPassword"
+                  label="Powtórz hasło"
+                  name="confirmPassword"
+                  type="password"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </Grid>
             </Grid>
@@ -101,8 +149,8 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/login" variant="body2">
-                  Posiadasz konto? Zaloguj się
+              <Link href={redirect? `/login?redirect=${redirect}` : '/login'} variant="body2">
+                  {"Posiadasz konto? Zaloguj się"}
                 </Link>
               </Grid>
             </Grid>
